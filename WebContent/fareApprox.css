@@ -1,0 +1,43 @@
+body{
+	background-image: url("scene1.jpg");
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.div_locator{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width:500px;
+	height: 450px;
+	padding: 40px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+h2{
+	margin:0;
+	padding: 0 0 20px;
+	color:#fff;
+	text-align: center;
+	border-bottom: 1px solid white;
+}
+h1{
+	margin:0;
+	margin-top:60px;
+	padding: 0 0 20px;
+	color:yellow;
+	text-align: center;
+	
+}
+h4{
+	
+	
+	padding-top: 0;
+	color:red;
+	text-align: left;
+}
+.div_locator p{
+	text-align:justified;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Tourist Guide</title>
+<script type="text/javascript"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script type="text/javascript">	
+
+$(document).ready(function(){
+
+	   // jQuery methods go here...
+	$("#feedback_form").submit(function(event){
+		alert('clicked');
+	    event.preventDefault(); //prevent default action 
+	/*ajax method starts here
+	var errHtml=
+		'
+		<h1> Server Error </h1>
+		';*/
+	    $.ajax({
+			  type: 'POST',
+			  url: "/TouristGuide/AddMessage",
+			  data: JSON.stringify({
+			    "name":document.getElementById("name").value ,
+			    "Email":document.getElementById("email").value,
+			    "Subject":document.getElementById("subject").value ,
+			    "Comment":document.getElementById("comment").value
+			  }),
+			  error: function(e) { 
+				  console.log(e);
+				  $("#feedback ul").append('<li>Server error !!! </li>');
+			  },
+			  success:function(data){
+			  	//todo on success
+			  	if(data.databaseStatus===true){
+			  		$("#feedback ul").append('<li>'+data.name+': '+data.email+':'+data.comment+':'+data.subject+'  </li>');	
+			  	}
+			  	else{
+			  		$("#feedback ul").append('<li>Database Error !!! </li>');
+			  	}
+			  	
+			  },
+			  dataType: "json",
+			  contentType: "application/json"
+			});
+	    //ajax method ended
+	});
+	});
+</script>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Tourist Guide</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#Popular Searches" class="w3-bar-item w3-button">Popular Searches</a>
+      <a href="approx.html" class="w3-bar-item w3-button">Expenses Approximator</a>
+      <a href="input.html" class="w3-bar-item w3-button">Nearby Places</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="traveller1.jpg" alt="Architecture" width="1500" height="700">
+  <div class="w3-display-middle w3-margin-top w3-center">
+     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>TOURIST</b></span> <span class="w3-hide-small w3-text-light-grey">GUIDE</span></h1>
+
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Popular Searches -->
+  <div class="w3-container w3-padding-32" id="Popular Searches">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Popular Searches</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Agra</div>
+        <img src="agra.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Shimla</div>
+        <img src="shimla.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Amritsar</div>
+        <img src="amritsar.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Jaipur</div>
+        <img src="jaipur.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Delhi</div>
+        <img src="delhi.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Mumbai</div>
+        <img src="mumbai.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">kashmir</div>
+        <img src="kashmir.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Darjeeling</div>
+        <img src="darjeeling.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Lets get in touch and talk about your and our next project.</p>
+    <form  id="feedback_form">
+      <input class="w3-input"            type="text" placeholder="Name"    required  name="Name"    id="name">
+      <input class="w3-input w3-section" type="text" placeholder="Email"   required  name="Email"   id="email">
+      <input class="w3-input w3-section" type="text" placeholder="Subject" required  name="Subject" id="subject">
+      <input class="w3-input w3-section" type="text" placeholder="Comment" required  name="Comment" id="comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i>Feedback
+      </button>
+    </form>
+  </div>
+  <div id="feedback">
+  <ul>
+  </ul>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Usama and Abdul</a></p>
+</footer>
+
+
+</body>
+</html>

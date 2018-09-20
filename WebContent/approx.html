@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fair Approximation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="approx.css">
+</head>
+<body >
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>Tourist Guide</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+  		<a href="index.html#Popular Searches" class="w3-bar-item w3-button">Popular Searches</a>
+      <a href="approx.html" class="w3-bar-item w3-button">Expenses Approximator</a>
+      <a href="input.html" class="w3-bar-item w3-button">Nearby Places</a>
+    </div>
+  </div>
+</div>
+
+<div  class="div_locator">
+<form id = "Frame_input" action = "FairApprox" method = "post">
+    <h2>Check Approximation Fare</h2>
+    <p> Source City</p>
+    <select name ="source_city">
+     <option value="0">Select the City</option>
+    <option value="laddakh">Laddakh</option>
+<option value="gulmarg">Gulmarg</option>
+<option value="srinagar">Srinagar</option>
+<option value="leh">Leh</option>
+<option value="manali">Manali</option>
+<option value="amritsar">Amritsar</option>
+<option value ="shimla ">shimla</option>
+<option value= "chandigarh">chandigarh</option>
+<option value="haridwar">haridwar</option>
+<option value="delhi">delhi</option>
+<option value="macleoud ganj">macleoud ganj</option>
+<option value="dalhauzi">dalhauzi</option>
+<option value="nanital">nanital</option>
+<option value="agra">agra</option>
+<option value= "jaipur">jaipur</option>
+<option value= "ajmer">ajmer</option>
+<option value=  "jasalmer">jasalmer</option>
+<option value= "jaudhpur">jaudhpur</option>
+<option value= "chittaurgarrh">chittaurgarrh</option>
+<option value= "uday pur">uday pur</option>
+<option value= "shivpuri">shivpuri</option>
+<option value= "khajuraho">khajuraho</option>
+<option value= "sanchi">sanchi</option>
+
+<option value= "gaya">gaya</option>
+<option value= "darzling">darzling</option>
+<option value= "gangtauk">gangtauk</option>
+<option value= "shillong">shillong</option>
+<option value= "kajiranga">kajiranga</option>
+<option value= "imfal">imfal</option>
+<option value= "varansi">varansi</option>
+<option value= "lucknow">lucknow</option>
+<option value= "kolkata">kolkata</option>
+<option value= "ujjain">ujjain</option>
+<option value= "Aurangabad">Aurangabad</option>
+<option value= "kaunark">kaunark</option>
+<option value= "panchmani">panchmani</option>
+<option value= "hyderabad">hyderabad</option>
+<option value= "vizag">vizag</option>
+<option value= "golkunda">golkunda</option>
+<option value= "vizapur">vizapur</option>
+<option value= "puttaparthi">puttaparthi</option>
+<option value= "belur">belur</option>
+<option value= "banglore">banglore</option>
+<option value= "maisur">maisur</option>
+<option value= "lakshdweep">lakshdweep</option>
+<option value= "port blair">port blair</option>
+<option value= "madhurai">madhurai</option>
+<option value= "thanjaboor">thanjaboor</option>
+<option value= "pondicherri">pondicherri</option>
+<option value= "mamalapuram">mamalapuram</option>
+<option value= "chennai">chennai</option>
+<option value= "Tiruchirappalli">Tiruchirappalli</option>
+<option value= "trichy">trichy</option>
+<option value= "codai kanal">codai kanal</option>
+<option value= "kovalam">kovalam</option>
+<option value= "kanyakumari">kanyakumari</option>
+<option value= "ranikhet">ranikhet</option>
+<option value= "dharamshala">dharamshala</option>
+<option value= "chail">chail</option>
+<option value= "ooty">ooty</option>
+<option value= "kunnoor">kunnoor</option>
+<option value= "musoori">musoori</option>
+<option value= "almorha">almorha</option>
+<option value= "margao">margao</option>
+<option value= "vaskodagama">vaskodagama</option>
+<option value= "rameshvaram" >rameshvaram</option>
+    
+  </select>
+  <p> Destination City</p>
+    <select name ="dest_city">
+     <option value="0">Select the City</option>
+    <option value="laddakh">Laddakh</option>
+<option value="gulmarg">Gulmarg</option>
+<option value="srinagar">Srinagar</option>
+<option value="leh">Leh</option>
+<option value="manali">Manali</option>
+<option value="amritsar">Amritsar</option>
+<option value ="shimla ">shimla</option>
+<option value= "chandigarh">chandigarh</option>
+<option value="haridwar">haridwar</option>
+<option value="delhi">delhi</option>
+<option value="macleoud ganj">macleoud ganj</option>
+<option value="dalhauzi">dalhauzi</option>
+<option value="nanital">nanital</option>
+<option value="agra">agra</option>
+<option value= "jaipur">jaipur</option>
+<option value= "ajmer">ajmer</option>
+<option value=  "jasalmer">jasalmer</option>
+<option value= "jaudhpur">jaudhpur</option>
+<option value= "chittaurgarrh">chittaurgarrh</option>
+<option value= "uday pur">uday pur</option>
+<option value= "shivpuri">shivpuri</option>
+<option value= "khajuraho">khajuraho</option>
+<option value= "sanchi">sanchi</option>
+
+<option value= "gaya">gaya</option>
+<option value= "darzling">darzling</option>
+<option value= "gangtauk">gangtauk</option>
+<option value= "shillong">shillong</option>
+<option value= "kajiranga">kajiranga</option>
+<option value= "imfal">imfal</option>
+<option value= "varansi">varansi</option>
+<option value= "lucknow">lucknow</option>
+<option value= "kolkata">kolkata</option>
+<option value= "ujjain">ujjain</option>
+<option value= "Aurangabad">Aurangabad</option>
+<option value= "kaunark">kaunark</option>
+<option value= "panchmani">panchmani</option>
+<option value= "hyderabad">hyderabad</option>
+<option value= "vizag">vizag</option>
+<option value= "golkunda">golkunda</option>
+<option value= "vizapur">vizapur</option>
+<option value= "puttaparthi">puttaparthi</option>
+<option value= "belur">belur</option>
+<option value= "banglore">banglore</option>
+<option value= "maisur">maisur</option>
+<option value= "lakshdweep">lakshdweep</option>
+<option value= "port blair">port blair</option>
+<option value= "madhurai">madhurai</option>
+<option value= "thanjaboor">thanjaboor</option>
+<option value= "pondicherri">pondicherri</option>
+<option value= "mamalapuram">mamalapuram</option>
+<option value= "chennai">chennai</option>
+<option value= "Tiruchirappalli">Tiruchirappalli</option>
+<option value= "trichy">trichy</option>
+<option value= "codai kanal">codai kanal</option>
+<option value= "kovalam">kovalam</option>
+<option value= "kanyakumari">kanyakumari</option>
+<option value= "ranikhet">ranikhet</option>
+<option value= "dharamshala">dharamshala</option>
+<option value= "chail">chail</option>
+<option value= "ooty">ooty</option>
+<option value= "kunnoor">kunnoor</option>
+<option value= "musoori">musoori</option>
+<option value= "almorha">almorha</option>
+<option value= "margao">margao</option>
+<option value= "vaskodagama">vaskodagama</option>
+<option value= "rameshvaram" >rameshvaram</option>
+    
+  </select>
+  <p>Stay (no. of Days)</p><input type="number" name="staydays" min="1" max="30">
+  <p>Select Your Class</p>
+  <input type="radio" name="class" value="economical" >&nbsp;&nbsp;Economical
+  <input type="radio" name="class" value="semi delux" >&nbsp;&nbsp;Semi-Delux
+  <input type="radio" name="class" value="delux" >&nbsp;&nbsp;Delux 
+  <input type="submit" name="" value="Check">
+  </form>
+</div>
+</body>
+</html>

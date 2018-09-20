@@ -1,0 +1,73 @@
+body{
+	background-image: url("scene1.jpg");
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	
+}
+.div_locator{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width:500px;
+	height: 450px;
+	padding: 40px 60px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.3);
+}
+
+h2{
+	margin:0;
+	padding: 0 0 50px;
+	color:white;
+	text-align: center;
+}
+.div_locator p{
+	margin:0;
+	padding: 0;
+	font-weight: bold; 
+	color:#fff;
+}
+
+.div_locator input,select{
+	width:100%;
+	margin-bottom: 20px;
+}
+.div_locator select
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:black;
+}
+.div_locator input[type = "text"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+}
+
+.div_locator input[type = "submit"]
+{
+		
+	border:none;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+	background: #ff267e; 
+	cursor: pointer;
+	border-radius: 20px;
+}
+.div_locator input[type="submit"]:hover
+{
+	background: #fff;
+	color:black;
+}
