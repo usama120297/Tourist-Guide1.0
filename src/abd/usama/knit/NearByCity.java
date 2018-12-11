@@ -63,7 +63,7 @@ public class NearByCity extends HttpServlet {
 	                         "<!-- Navbar (sit on top) -->\r\n"+
 	                         "<div class=\"w3-top\">\r\n"+
 	                         "<div class=\"w3-bar w3-white w3-wide w3-padding w3-card\">\r\n"+
-	                         "<a href=\"touristGuide/webContent/index.html\" class=\"w3-bar-item w3-button\"><b>Tourist Guide</b></a>\r\n"+
+	                         "<a href=\"index.html\" class=\"w3-bar-item w3-button\"><b>Tourist Guide</b></a>\r\n"+
 	                         "<!-- Float links to the right. Hide them on small screens -->\r\n"+
 	                         "<div class=\"w3-right w3-hide-small\">\r\n"+
 	                         "<a href=\"\\TouristGuide 1.0\\index.html#Popular Searches\" class=\"w3-bar-item w3-button\">Popular Searches</a>\r\n"+
